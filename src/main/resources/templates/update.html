@@ -19,7 +19,7 @@
 	</div>
 	<h3>
 		<form th:action="@{update_page}" method="post" th:object="${student}">
-			   Student Id: <input type="text" th:field="*{id} required"><br><br>
+			   Student Id: <input type="text" th:field="*{id}" required><br><br>
 			 Student Name: <input type="text" th:field="*{name}" required><br><br>
 			Student email: <input type="email" th:field="*{email}" required><br><br>
 			  Total marks: <input type="text" th:field="*{marks}" required><br><br>
@@ -27,7 +27,7 @@
 			<input type="submit" value="submit">
 		</form>
 	</h3>
-	<a href="index.html">go to index</a>
+	<a th:href="@{/}">go to index</a>
 
 </body>
 

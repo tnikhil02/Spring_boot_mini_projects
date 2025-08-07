@@ -1,5 +1,7 @@
 package in.nik.main.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,10 @@ public class Studentserviceimpl implements StudentService
 		else {
 			return false;	
 		}
+	}
+	@Override
+	public List<Student> show_list() {
+		return std_table.findAll();
 	}
 
 }
