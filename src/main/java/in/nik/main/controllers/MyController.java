@@ -14,10 +14,14 @@ import in.nik.main.service.StudentService;
 public class MyController {
 	@Autowired
 	StudentService serv;
+	@GetMapping("/")
+	public String indexPage() {
+		return "index";
+	}
 	@GetMapping("/add_std_form")
 	public String openaddstdPage(Model model) {
 		model.addAttribute("student",new Student());
-		return "addStudent.html";
+		return "addStudent";
 	}
 	@PostMapping("/addingstd_page")
 	public String addstdPage(@ModelAttribute("student") Student std,Model model) {
@@ -27,7 +31,7 @@ public class MyController {
 		else {
 			model.addAttribute("error","details were not added due to some error");
 		}
-		return "addStudent.html";
+		return "addStudent";
 		
 	}
 }
